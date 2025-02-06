@@ -1,0 +1,4 @@
+T4,Abdullah,45,Abd@,013,Math,23400
+T5,Wali,34,Wali@,015,Chemistry,25000
+T1,Robin,28,robin123@,0192,Higher Math,30000
+T2,Badal,25,badal90@,0193,BGS,21000

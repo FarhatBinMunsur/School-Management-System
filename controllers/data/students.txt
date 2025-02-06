@@ -1,0 +1,6 @@
+S2,Fahim,12,fahim23@,016,3,1234,fball,25,20-2-2012,6A,Dhaka
+S1,Hamid,12,hamid23@,018,3,1234,cricket,13,3-5-12,6A,dhaka
+S3,Karim,18,karim34@,01982,3,1234,fb,14,1-2-2006,10B,dhaka
+S4,Jahid,15,jahid45@,0191,3,1234,cricket,23,21-3-2009,8A,Rangpur
+S5,Sumi,16,sumi43@,01392,3,1234,cricket,4,12-12-2008,10A,Chittagong
+S6,ratul,21,rt23@,0136,3,1234,cricket,17,21-5-2003,8B,Dhaka
