@@ -24,8 +24,8 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 	
 	public TeacherOperationFrame(User u)
 	{
-		super("Admin Operation Frame");
-		this.setSize(800,800);
+		super("Teacher Operation Frame");
+		this.setSize(1000,800);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -39,7 +39,7 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 		this.panel.add(userIdLabel);
 		
 		this.userTF=new JTextField();
-		this.userTF.setBounds(120,50,100,30);
+		this.userTF.setBounds(120,50,130,30);
 		this.panel.add(userTF);
 		
 		this.nameLabel=new JLabel("Name:");
@@ -47,7 +47,7 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 		this.panel.add(nameLabel);
 		
 		this.nameTF=new JTextField();
-		this.nameTF.setBounds(120,100,100,30);
+		this.nameTF.setBounds(120,100,130,30);
 		this.panel.add(nameTF);
 		
 		this.emailLabel=new JLabel("email:");
@@ -55,7 +55,7 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 		this.panel.add(emailLabel);
 		
 		this.emailTF=new JTextField();
-		this.emailTF.setBounds(120,150,100,30);
+		this.emailTF.setBounds(120,150,130,30);
 		this.panel.add(emailTF);
 		
 		this.phoneNoLabel=new JLabel("phone No:");
@@ -63,89 +63,89 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 		this.panel.add(phoneNoLabel);
 		
 		this.phoneNoTF=new JTextField();
-		this.phoneNoTF.setBounds(120,200,100,30);
+		this.phoneNoTF.setBounds(120,200,130,30);
 		this.panel.add(phoneNoTF);
 		
 		this.ageLabel=new JLabel("Age:");
-		this.ageLabel.setBounds(50,300,60,30);
+		this.ageLabel.setBounds(50,250,60,30);
 		this.panel.add(ageLabel);
 		
 		this.ageTF=new JTextField();
-		this.ageTF.setBounds(120,300,100,30);
+		this.ageTF.setBounds(120,250,130,30);
 		this.panel.add(ageTF);
 		
-		this.securityQuesLabel=new JLabel("Security Ques: What is your Favourite Game?:");
-		this.securityQuesLabel.setBounds(280,100,300,30);
+		this.securityQuesLabel=new JLabel("Security Ques: What is your Favourite Game ?");
+		this.securityQuesLabel.setBounds(450,50,300,30);
 		this.panel.add(securityQuesLabel);
 		
 		this.securityAnsLabel=new JLabel("Security Ans:");
-		this.securityAnsLabel.setBounds(280,150,100,30);
+		this.securityAnsLabel.setBounds(450,100,100,30);
 		this.panel.add(securityAnsLabel);
 		
 		this.securityAnsTF=new JTextField();
-		this.securityAnsTF.setBounds(390,150,100,30);
+		this.securityAnsTF.setBounds(560,100,130,30);
 		this.panel.add(securityAnsTF);
 		
 		this.passLabel=new JLabel("Password:");
-		this.passLabel.setBounds(280,200,100,30);
+		this.passLabel.setBounds(450,150,100,30);
 		this.panel.add(passLabel);
 		
 		this.passPF=new JPasswordField();
-		this.passPF.setBounds(390,200,100,30);
+		this.passPF.setBounds(560,150,130,30);
 		this.panel.add(passPF);
 		
 		this.sspLabel=new JLabel("Subject :");
-		this.sspLabel.setBounds(280,250,100,30);
+		this.sspLabel.setBounds(450,200,130,30);
 		this.panel.add(sspLabel);
 		
 		String[] ssp={"Bangla","English","Math","ICT","BGS","Religion studies","Physics","Chemistry","Biology","Higher Math"};
 		this.sspCMB=new JComboBox(ssp);
-		this.sspCMB.setBounds(390,250,200,30);
+		this.sspCMB.setBounds(560,200,170,30);
 		this.panel.add(sspCMB);
 		
-		this.salaryLabel=new JLabel("Salary");
-		this.salaryLabel.setBounds(250,300,100,30);
+		this.salaryLabel=new JLabel("Salary :");
+		this.salaryLabel.setBounds(450,250,100,30);
 		this.panel.add(salaryLabel);
 		
 		this.salaryTF=new JTextField();
-		this.salaryTF.setBounds(390,300,100,30);
+		this.salaryTF.setBounds(560,250,130,30);
 		this.panel.add(salaryTF);
 		
 		this.c=new Color(245, 229, 108);
 		this.c1=new Color(230, 212, 188);
 		
 		this.addBtn=new JButton("Add Teacher");
-		this.addBtn.setBounds(50,350,100,30);
+		this.addBtn.setBounds(50,350,140,30);
 		this.addBtn.addActionListener(this);
 		this.addBtn.setBackground(c1);
 		this.panel.add(addBtn);
 		
-		this.updateBtn=new JButton("update Teacher");
-		this.updateBtn.setBounds(160,350,120,30);
+		this.updateBtn=new JButton("Update Teacher");
+		this.updateBtn.setBounds(210,350,150,30);
 		this.updateBtn.addActionListener(this);
 		this.updateBtn.setBackground(c1);
 		this.panel.add(updateBtn);
 		
-		this.removeBtn=new JButton("remove Teacher");
-		this.removeBtn.setBounds(290,350,120,30);
+		this.removeBtn=new JButton("Remove Teacher");
+		this.removeBtn.setBounds(380,350,150,30);
 		this.removeBtn.addActionListener(this);
 		this.removeBtn.setBackground(c1);
 		this.panel.add(removeBtn);
 		
-		this.searchBtn=new JButton("search Teacher");
-		this.searchBtn.setBounds(420,350,120,30);
+		this.searchBtn=new JButton("Search Teacher");
+		this.searchBtn.setBounds(550,350,150,30);
 		this.searchBtn.addActionListener(this);
 		this.searchBtn.setBackground(c1);
 		this.panel.add(searchBtn);
 		
 		this.resetBtn=new JButton("Reset");
-		this.resetBtn.setBounds(550,350,100,30);
+		this.resetBtn.setBounds(720,350,100,30);
 		this.resetBtn.addActionListener(this);
 		this.resetBtn.setBackground(c1);
 		this.panel.add(resetBtn);
 		
 		this.backBtn=new JButton("Back");
-		this.backBtn.setBounds(660,350,100,30);
+		this.backBtn.setBounds(840,350,100,30);
 		this.backBtn.addActionListener(this);
 		this.backBtn.setBackground(c);
 		this.panel.add(backBtn);
@@ -178,7 +178,7 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 		this.teacherTable=new JTable(teacherData1,head1);
 	
 		this.teacherTableSP=new JScrollPane(teacherTable);
-		this.teacherTableSP.setBounds(50,400,700,200);
+		this.teacherTableSP.setBounds(70,400,850,300);
 		this.teacherTable.setEnabled(false);
 		this.panel.add(teacherTableSP);
 		
@@ -362,7 +362,7 @@ public class TeacherOperationFrame extends JFrame implements ActionListener
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(this,"Admin not found");
+					JOptionPane.showMessageDialog(this,"Teacher not found");
 				}
 			}
 			

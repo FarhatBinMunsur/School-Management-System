@@ -12,15 +12,22 @@ public class NoticeOperationFrame extends JFrame implements ActionListener{
 	private JLabel  titleLabel,noticeIDLabel,noticeLabel;
 	private JTextField noticeIDTF,noticeTF;
 	private JButton addBtn,updateBtn,deleteBtn,backBtn;
+	private ImageIcon backImg;
 	private JPanel panel;
 	private User u;
 	public NoticeOperationFrame(User u){
 		super("Notice Operation");
-		this.setSize(800,500);
+		this.setSize(860,450);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.panel=new JPanel();
+		this.backImg=new ImageIcon("images/notice.jpg");
+		this.panel=new JPanel(){
+			protected void paintComponent(Graphics g){
+				super.paintComponent(g);
+				g.drawImage(backImg.getImage(),0,0,null);
+			}
+		};
 		this.panel.setLayout(null);
 		/*
 		this.font1=new Font("Comic Sans MS", Font.BOLD,20);
@@ -43,7 +50,7 @@ public class NoticeOperationFrame extends JFrame implements ActionListener{
 		this.panel.add(noticeLabel);
 		
 		this.noticeTF=new JTextField();
-		this.noticeTF.setBounds(170,120,500,50);
+		this.noticeTF.setBounds(170,120,300,50);
 		this.panel.add(noticeTF);
 		
 		
@@ -67,13 +74,13 @@ public class NoticeOperationFrame extends JFrame implements ActionListener{
 		*/
 		
 		this.deleteBtn=new JButton("delete");
-		this.deleteBtn.setBounds(310,200,100,30);
+		this.deleteBtn.setBounds(50,260,100,30);
 		this.deleteBtn.addActionListener(this);
 		//this.deleteBtn.setBackground(c1);
 		this.panel.add(deleteBtn);
 		
 		this.backBtn=new JButton("Back");
-		this.backBtn.setBounds(440,200,100,30);
+		this.backBtn.setBounds(180,260,100,30);
 		this.backBtn.addActionListener(this);
 		//this.backBtn.setBackground(c);
 		this.panel.add(backBtn);
@@ -109,7 +116,6 @@ public class NoticeOperationFrame extends JFrame implements ActionListener{
 		if(command.equals(updateBtn.getText())){
 			if(!noticeIDTF.getText().isEmpty() && !noticeTF.getText().isEmpty()){
 				String noticeID=noticeIDTF.getText();
-				
 				
 				NoticeController nc=new NoticeController();
 				Notice n=nc.searchNotice(noticeID);

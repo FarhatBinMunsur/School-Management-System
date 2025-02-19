@@ -116,8 +116,10 @@ public class TeachersHomeFrame extends JFrame implements ActionListener
 		if(studentsBtn.getText().equals(command))
 		{
 			this.setVisible(false);
-			AllStudentFrame asf=new AllStudentFrame(this.u);
-			asf.setVisible(true);
+			// AllStudentFrame asf=new AllStudentFrame(this.u);
+			// asf.setVisible(true);
+			AssignedSection as=new AssignedSection(this.u);
+			as.setVisible(true);
 		}
 		
 		if(profileBtn.getText().equals(command))

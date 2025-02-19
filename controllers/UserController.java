@@ -91,7 +91,7 @@ public void write(User user[]){
 	String fileName="controllers/data/users.txt";
 	
 	FileIO fio=new FileIO();
-	fio.writeFile(fileName,data);
+	fio.writeFile(fileName,data,false);
 }
 
 }

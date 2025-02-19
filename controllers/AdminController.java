@@ -89,7 +89,7 @@ public class AdminController {
 		
 		String fileName="controllers/data/admins.txt";
 		FileIO fio=new FileIO();
-		fio.writeFile(fileName,data);
+		fio.writeFile(fileName,data,false);
 
 		
 	}

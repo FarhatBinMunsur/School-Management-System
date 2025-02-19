@@ -31,7 +31,7 @@ public class NoticeController{
 		}
 		
 		FileIO fio=new FileIO();
-		fio.writeFile("controllers/data/notices.txt",data);
+		fio.writeFile("controllers/data/notices.txt",data,false);
 	}
 	
 	public void insertNotice(Notice n ){

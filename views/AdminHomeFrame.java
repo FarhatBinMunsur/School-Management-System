@@ -11,22 +11,23 @@ import controllers.*;
 public class AdminHomeFrame extends JFrame implements ActionListener
 {
 	
-	private JButton adminBtn, studentBtn, teacherBtn, teachersBtn, studentsBtn,profileBtn, updatePassBtn, logOutBtn,sectionBtn,noticeBtn;
+	private JButton adminBtn, studentBtn, teacherBtn, teachersBtn, studentsBtn,profileBtn, updatePassBtn, logOutBtn,sectionBtn,noticeBtn,paymentBtn;
 	private JPanel panel;
 	private ImageIcon backImg;
 	private User u;
-	private Color c,c2;
+	private Color c,c2,c3,c4,c5;
+	
 	
 	
 	public AdminHomeFrame(User u)
 	{
 		
 		super("Admin Home Frame");
-		this.setSize(600,600);
+		this.setSize(740,535);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.backImg=new ImageIcon("images/school-1.jpg");
+		this.backImg=new ImageIcon("images/Admin3.jpg");
 		this.panel=new JPanel(){
 			protected void paintComponent(Graphics g){
 				super.paintComponent(g);
@@ -42,70 +43,83 @@ public class AdminHomeFrame extends JFrame implements ActionListener
 		this.panel.add(imgLabel);
 		*/
 		
-		this.c=new Color(245, 229, 108);
-		this.c2=new Color(153, 255, 167);
+		this.c=new Color(250, 130, 130);
+		this.c2=new Color(255, 255, 153);
+		this.c3=new Color(255, 181, 112);
+		this.c4=new Color(255, 228, 150);
+		this.c5=new Color(204, 255, 204);
 		
+
 		this.adminBtn=new JButton("Admin operation");
-		this.adminBtn.setBounds(50,50,150,50);
+		this.adminBtn.setBounds(90,50,150,50);
 		this.adminBtn.addActionListener(this);
 		this.adminBtn.setBackground(c2);
 		this.panel.add(adminBtn);
 		
 		
 		this.studentBtn=new JButton("Student operation");
-		this.studentBtn.setBounds(220,50,150,50);
+		this.studentBtn.setBounds(260,50,150,50);
 		this.studentBtn.addActionListener(this);
 		this.studentBtn.setBackground(c2);
 		this.panel.add(studentBtn);
 		
 		
 		this.teacherBtn=new JButton("Teachers operation");
-		this.teacherBtn.setBounds(390,50,150,50);
+		this.teacherBtn.setBounds(450,50,150,50);
 		this.teacherBtn.addActionListener(this);
 		this.teacherBtn.setBackground(c2);
 		this.panel.add(teacherBtn);
 		
 		this.teachersBtn=new JButton("View Teachers");
-		this.teachersBtn.setBounds(100,150,150,50);
+		this.teachersBtn.setBounds(260,150,150,50);
 		this.teachersBtn.addActionListener(this);
-		this.teachersBtn.setBackground(c2);
+		this.teachersBtn.setBackground(c4);
 		this.panel.add(teachersBtn);
 		
 		this.studentsBtn=new JButton("View Students");
-		this.studentsBtn.setBounds(270,150,150,50);
+		this.studentsBtn.setBounds(450,150,150,50);
 		this.studentsBtn.addActionListener(this);
-		this.studentsBtn.setBackground(c2);
+		this.studentsBtn.setBackground(c4);
 		this.panel.add(studentsBtn);
 		
 		this.profileBtn=new JButton("Update Profile");
-		this.profileBtn.setBounds(100,250,150,50);
+		this.profileBtn.setBounds(170,350,150,50);
 		this.profileBtn.addActionListener(this);
-		this.profileBtn.setBackground(c2);
+		this.profileBtn.setBackground(c3);
 		this.panel.add(profileBtn);
 		
 		this.updatePassBtn=new JButton("Update Password");
-		this.updatePassBtn.setBounds(270,250,150,50);
+		this.updatePassBtn.setBounds(340,350,150,50);
 		this.updatePassBtn.addActionListener(this);
-		this.updatePassBtn.setBackground(c2);
+		this.updatePassBtn.setBackground(c3);
 		this.panel.add(updatePassBtn);
 		
 		this.sectionBtn=new JButton("Section Operation");
-		this.sectionBtn.setBounds(100,350,150,50);
+		this.sectionBtn.setBounds(170,250,150,50);
 		this.sectionBtn.addActionListener(this);
-		this.sectionBtn.setBackground(c2);
+		this.sectionBtn.setBackground(c5);
 		this.panel.add(sectionBtn);
 		
+		
+		this.noticeBtn=new JButton("Notice");
+		this.noticeBtn.setBounds(90,150,150,50);
+		this.noticeBtn.setBackground(c4);
+		this.noticeBtn.addActionListener(this);
+		this.panel.add(noticeBtn);
+		
+		this.paymentBtn=new JButton("Payment Operation");
+		this.paymentBtn.setBounds(340,250,150,50);
+		this.paymentBtn.setBackground(c5);
+
+		this.paymentBtn.addActionListener(this);
+		this.panel.add(paymentBtn);
+
+		
 		this.logOutBtn=new JButton("Log Out");
-		this.logOutBtn.setBounds(240,450,100,50);
+		this.logOutBtn.setBounds(270,435,100,50);
 		this.logOutBtn.setBackground(c);
 		this.logOutBtn.addActionListener(this);
 		this.panel.add(logOutBtn);
-		
-		this.noticeBtn=new JButton("Notice");
-		this.noticeBtn.setBounds(270,350,150,50);
-		this.noticeBtn.setBackground(c2);
-		this.noticeBtn.addActionListener(this);
-		this.panel.add(noticeBtn);
 		
 		this.add(panel);
 		this.u=u;
@@ -176,6 +190,12 @@ public class AdminHomeFrame extends JFrame implements ActionListener
 			NoticeOperationFrame nof=new NoticeOperationFrame(this.u);
 			this.setVisible(false);
 			nof.setVisible(true);
+		}
+
+		if(paymentBtn.getText().equals(command)){
+			PaymentOperationFrame pof=new PaymentOperationFrame(this.u);
+			this.setVisible(false);
+			pof.setVisible(true);
 		}
 		
 		}

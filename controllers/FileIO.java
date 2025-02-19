@@ -35,12 +35,12 @@ public class FileIO
 		return null;
 	}
 	
-	public void writeFile(String fileName, String data[])
+	public void writeFile(String fileName, String data[],boolean append)
 	{
 		try
 		{
 			File f=new File(fileName);
-			FileWriter fw=new FileWriter(f,false);
+			FileWriter fw=new FileWriter(f,append);
 			
 			for(int i=0;i<data.length;i++)
 			{

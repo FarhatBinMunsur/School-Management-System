@@ -21,14 +21,19 @@ public class SectionController{
 		FileIO fio= new FileIO();
 		String data[]=fio.readFile(fileName);
 		
-		Section[] sections=new Section[100];
-		Section sc= new Section();
-		
+		if (data == null || data.length == 0) {
+			return new Section[0]; // Return an empty array instead of null
+		}
+	
+		Section[] sections = new Section[data.length]; // Create array with exact size
+	
 		for(int i=0;i<data.length;i++){
-			if(data[i]!=null){
-				
+
+			if(data[i]!=null ){
+				if(sections[i]==null){
+				Section sc= new Section();
 				sections[i]=sc.formSection(data[i]);
-				
+				}
 			}
 		}
 		return sections;
@@ -47,7 +52,7 @@ public class SectionController{
 		}
 		String fileName="controllers/data/sections.txt";
 		FileIO fio =new FileIO();
-		fio.writeFile(fileName,data);
+		fio.writeFile(fileName,data,false);
 	}
 	
 	public void deleteSection(String sectionId){

@@ -8,10 +8,13 @@ import models.*;
 import controllers.*;
 
 public class AllStudentFrame extends JFrame implements ActionListener{
+	private JLabel titleLabel;
 	private JButton backBtn;
 	private JTable studentTable;
 	private JScrollPane studentTableSP;
 	private User u;
+	private ImageIcon img;
+	private JLabel imgLabel;
 	private Color c,c1;
 	private JPanel panel;
 	
@@ -25,11 +28,16 @@ public class AllStudentFrame extends JFrame implements ActionListener{
 		this.panel=new JPanel();
 		
 		this.panel.setBackground(c1);
-		
-
 		this.panel.setLayout(null);
+
+		// this.titleLabel=new JLabel(" Students List ");
+		// this.titleLabel.setBounds(400,30,200,50);
+		// this.titleLabel.setFont(new Font("Cambria",Font.BOLD,30));
+		// this.titleLabel.setForeground(Color.red);
+		// this.panel.add(titleLabel);
+
 		this.backBtn=new JButton("<<- Back");
-		this.backBtn.setBounds(800,420,120,30);
+		this.backBtn.setBounds(800,530,120,30);
 		this.backBtn.setBackground(c);
 		this.backBtn.addActionListener(this);
 		this.panel.add(backBtn);
@@ -60,15 +68,18 @@ public class AllStudentFrame extends JFrame implements ActionListener{
 		this.studentTable=new JTable(studentData,head1);
 	
 		this.studentTableSP=new JScrollPane(studentTable);
-		this.studentTableSP.setBounds(50,50,900,350);
+		this.studentTableSP.setBounds(50,150,900,350);
 		this.studentTable.setEnabled(false);
 		this.panel.add(studentTableSP);
 		
 		this.panel.revalidate();
 		this.panel.repaint();
 		
+		this.img=new ImageIcon("images/allS.jpg");
+		this.imgLabel=new JLabel(img);
+		this.imgLabel.setBounds(280,5,447,123);
+		this.panel.add(imgLabel);
 		this.add(panel);	
-		
 		this.u=u;
 		
 	}

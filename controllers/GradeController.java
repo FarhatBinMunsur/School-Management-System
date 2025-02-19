@@ -83,6 +83,6 @@ public class GradeController{
 		}
 		String fileName="Controllers/data/grades.txt";
 		FileIO fio=new FileIO();
-		fio.writeFile(fileName,data);
+		fio.writeFile(fileName,data,false);
 	}
 }

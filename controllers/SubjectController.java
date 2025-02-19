@@ -38,7 +38,7 @@ public class SubjectController{
 		}
 		String fileName="controllers/data/subjects.txt";
 		FileIO fio=new FileIO();
-		fio.writeFile(fileName,values);
+		fio.writeFile(fileName,values,false);
 	}
 	
 	public void insertSubject(Subject s){

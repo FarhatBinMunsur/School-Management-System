@@ -13,17 +13,24 @@ public class SectionOperationFrame extends JFrame implements ActionListener{
 	private JTable sectionTable;
 	private JScrollPane sectionTableSP;
 	private Color c;
+	private ImageIcon backImg;
 	private User u;
 	private JPanel panel;
 	
 	public SectionOperationFrame(User u){
 		super ("Section Operation Frame");
-		this.setSize(800, 800);
+		this.setSize(800, 750);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.u = u;
 		
-		this.panel = new JPanel();
+		this.backImg=new ImageIcon("images/section.jpg");
+		this.panel=new JPanel(){
+			protected void paintComponent(Graphics g){
+				super.paintComponent(g);
+				g.drawImage(backImg.getImage(),0,0,null);
+			}
+		};
         this.panel.setLayout(null);
 
 		this.sectionIDLabel=new JLabel("Section ID: ");
@@ -43,19 +50,19 @@ public class SectionOperationFrame extends JFrame implements ActionListener{
         this.panel.add(stdCntTF);
 
         this.teacherIDLabel = new JLabel("Subject ID:");
-        this.teacherIDLabel.setBounds(50, 150, 100, 30);
+        this.teacherIDLabel.setBounds(50, 200, 100, 30 );
         this.panel.add(teacherIDLabel);
 
         this.tcrTF= new JTextField();
-        this.tcrTF.setBounds(160, 150, 150, 30);
+        this.tcrTF.setBounds(160, 200, 150, 30);
         this.panel.add(tcrTF);
 
         this.subjectIDLabel = new JLabel("Teacher ID:");
-        this.subjectIDLabel.setBounds(50, 200, 100, 30);
+        this.subjectIDLabel.setBounds(50, 150, 100, 30);
         this.panel.add(subjectIDLabel);
 
         this.sbjctTF= new JTextField();
-        this.sbjctTF.setBounds(160, 200, 150, 30);
+        this.sbjctTF.setBounds(160, 150, 150, 30);
         this.panel.add(sbjctTF);
 		
 		this.c=new Color(245, 229, 108);
@@ -91,21 +98,21 @@ public class SectionOperationFrame extends JFrame implements ActionListener{
         this.panel.add(backBtn);
 		
 		SectionController sc=new SectionController();
-		Section sectionList[] =sc.getAllSection();
-		
+		Section [] sectionList=sc.getAllSection();
+		if(sectionList==null ) System.out.println("NULL");
 		String sectionData[][]=new String[sectionList.length][4];
 		
 		for(int i=0;i<sectionList.length;i++){
 			
-			try{
+			if(sectionList[i]!=null){
+			
 			sectionData[i][0]=sectionList[i].getSectionID();
 			sectionData[i][1]=String.valueOf(sectionList[i].getStudentCount());
-			sectionData[i][2]=sectionList[i].getTeacherID();
-			sectionData[i][3]=sectionList[i].getSubjectID();
-			}
-			catch(Exception e){
-					e.printStackTrace();
-				}
+			sectionData[i][2]=sectionList[i].getSubjectID();
+			sectionData[i][3]=sectionList[i].getTeacherID();
+			
+		}
+			
 		}
 		
 		String head[]={"Section","Student Count","Subject Code","Teacher ID"};

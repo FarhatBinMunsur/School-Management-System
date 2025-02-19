@@ -78,6 +78,6 @@ public class StudentController{
 		}
 		String fileName="controllers/data/students.txt";
 		FileIO fio=new FileIO();
-		fio.writeFile(fileName,data);
+		fio.writeFile(fileName,data,false);
 	}
 }

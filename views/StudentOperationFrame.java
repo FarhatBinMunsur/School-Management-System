@@ -77,47 +77,47 @@ public class StudentOperationFrame extends JFrame implements ActionListener{
 		
 		
 		this.addressLabel=new JLabel("Address:");
-		this.addressLabel.setBounds(650,50,60,30);
+		this.addressLabel.setBounds(570,50,60,30);
 		this.panel.add(addressLabel);
 		
 		this.addressTF=new JTextField();
-		this.addressTF.setBounds(730,50,160,30);
+		this.addressTF.setBounds(650,50,160,30);
 		this.panel.add(addressTF);
 		
 		this.securityQuesLabel=new JLabel("Security Ques: What is your favourite game? : ");
-		this.securityQuesLabel.setBounds(650,100,300,30);
+		this.securityQuesLabel.setBounds(570,100,300,30);
 		this.panel.add(securityQuesLabel);
 		
 		this.securityAnsLabel=new JLabel("Security Ans:");
-		this.securityAnsLabel.setBounds(650,150,100,30);
+		this.securityAnsLabel.setBounds(570,150,100,30);
 		this.panel.add(securityAnsLabel);
 		
 		this.securityAnsTF=new JTextField();
-		this.securityAnsTF.setBounds(770,150,120,30);
+		this.securityAnsTF.setBounds(690,150,120,30);
 		this.panel.add(securityAnsTF);
 		
 		this.passLabel=new JLabel("Password:");
-		this.passLabel.setBounds(650,200,100,30);
+		this.passLabel.setBounds(570,200,100,30);
 		this.panel.add(passLabel);
 		
 		this.passPF=new JPasswordField();
-		this.passPF.setBounds(770,200,120,30);
+		this.passPF.setBounds(690,200,120,30);
 		this.panel.add(passPF);
 		
 		this.rollLabel=new JLabel("Roll no:");
-		this.rollLabel.setBounds(650,250,100,30);
+		this.rollLabel.setBounds(570,250,100,30);
 		this.panel.add(rollLabel);
 		
 		this.rollTF=new JTextField();
-		this.rollTF.setBounds(770,250,120,30);
+		this.rollTF.setBounds(690,250,120,30);
 		this.panel.add(rollTF);
 		
 		this.DOBLabel=new JLabel("Date of Birth: ");
-		this.DOBLabel.setBounds(650,300,100,30);
+		this.DOBLabel.setBounds(570,300,100,30);
 		this.panel.add(DOBLabel);
 		
 		this.DOBTF=new JTextField();
-		this.DOBTF.setBounds(770,300,120,30);
+		this.DOBTF.setBounds(690,300,120,30);
 		this.panel.add(DOBTF);
 		
 		

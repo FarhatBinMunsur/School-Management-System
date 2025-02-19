@@ -10,7 +10,10 @@ import controllers.*;
 public class AllTeacherFrame extends JFrame implements ActionListener{
 	private JButton backBtn;
 	private JTable teacherTable;
+	private JLabel titleLabel;
 	private JScrollPane teacherTableSP;
+	private JLabel imgLabel;
+	private ImageIcon img;
 	private Color c,c2;
 	private User u;
 	private JPanel panel;
@@ -20,14 +23,20 @@ public class AllTeacherFrame extends JFrame implements ActionListener{
 		this.setSize(1000,700);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.c=new Color(208, 242, 219);
+		this.c=new Color(245, 229, 108);
 		this.c2=new Color(230, 212, 188);
 		this.panel=new JPanel();
 		this.panel.setBackground(c2);
 		this.panel.setLayout(null);
 		
+		// this.titleLabel=new JLabel(" Teachers List ");
+		// this.titleLabel.setBounds(400,30,200,50);
+		// this.titleLabel.setFont(new Font("Cambria",Font.BOLD,30));
+		// this.titleLabel.setForeground(Color.red);
+		// this.panel.add(titleLabel);
+
 		this.backBtn=new JButton("<<- Back");
-		this.backBtn.setBounds(800,420,120,30);
+		this.backBtn.setBounds(800,530,120,30);
 		this.backBtn.setBackground(c);
 		this.backBtn.addActionListener(this);
 		
@@ -54,13 +63,18 @@ public class AllTeacherFrame extends JFrame implements ActionListener{
 		this.teacherTable=new JTable(teacherData,head1);
 	
 		this.teacherTableSP=new JScrollPane(teacherTable);
-		this.teacherTableSP.setBounds(50,50,900,350);
+		this.teacherTableSP.setBounds(50,150,900,350);
 		this.teacherTable.setEnabled(false);
 		this.panel.add(teacherTableSP);
 		
 		this.panel.revalidate();
 		this.panel.repaint();
 		
+
+		this.img=new ImageIcon("images/allT.jpg");
+		this.imgLabel=new JLabel(img);
+		this.imgLabel.setBounds(280,5,447,123);
+		this.panel.add(imgLabel);
 		this.add(panel);	
 		
 		this.u=u;

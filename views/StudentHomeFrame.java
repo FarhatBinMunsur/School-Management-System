@@ -11,7 +11,7 @@ import controllers.*;
 public class StudentHomeFrame extends JFrame implements ActionListener
 {
 	private JLabel titleLabel;
-	private JButton resultBtn,teacherBtn,profileBtn,updatePassBtn, logOutBtn,noticeBtn;
+	private JButton resultBtn,teacherBtn,profileBtn,updatePassBtn, logOutBtn,noticeBtn,payBtn;
 	private JPanel panel;
 	private Color c,c2;
 	private Font font1;
@@ -56,20 +56,26 @@ public class StudentHomeFrame extends JFrame implements ActionListener
 		this.noticeBtn.setBackground(c2);
 		this.panel.add(noticeBtn);
 		
+		this.payBtn=new JButton(" Payment ");
+		this.payBtn.setBounds(330,140,150,40);
+		this.payBtn.addActionListener(this);
+		this.payBtn.setBackground(c2);
+		this.panel.add(payBtn);
+
 		this.profileBtn=new JButton("View Profile");
-		this.profileBtn.setBounds(330,140,150,40);
+		this.profileBtn.setBounds(70,230,150,40);
 		this.profileBtn.addActionListener(this);
 		this.profileBtn.setBackground(c2);
 		this.panel.add(profileBtn);
 		
 		this.teacherBtn=new JButton("View teachers");
-		this.teacherBtn.setBounds(150,230,150,40);
+		this.teacherBtn.setBounds(250,230,150,40);
 		this.teacherBtn.addActionListener(this);
 		this.teacherBtn.setBackground(c2);
 		this.panel.add(teacherBtn);		
 		
 		this.resultBtn=new JButton("View Result");
-		this.resultBtn.setBounds(330,230,150,40);
+		this.resultBtn.setBounds(430,230,150,40);
 		this.resultBtn.addActionListener(this);
 		this.resultBtn.setBackground(c2);
 		this.panel.add(resultBtn);
@@ -79,13 +85,13 @@ public class StudentHomeFrame extends JFrame implements ActionListener
 		this.updatePassBtn.addActionListener(this);
 		this.updatePassBtn.setBackground(c2);
 		this.panel.add(updatePassBtn);
-		
+
+
 		this.logOutBtn=new JButton("Log Out");
 		this.logOutBtn.setBounds(330,320,150,40);
 		this.logOutBtn.addActionListener(this);
 		this.logOutBtn.setBackground(c);
 		this.panel.add(logOutBtn);
-		
 		
 		
 		this.add(panel);
@@ -94,7 +100,7 @@ public class StudentHomeFrame extends JFrame implements ActionListener
 	
 	public void actionPerformed(ActionEvent ae)
 	{
-		try{
+		
 		String command=ae.getActionCommand();
 		
 		if(profileBtn.getText().equals(command))
@@ -134,10 +140,25 @@ public class StudentHomeFrame extends JFrame implements ActionListener
 			this.setVisible(false);
 			nv.setVisible(true);
 		}
+
+		if(payBtn.getText().equals(command)){
+
+		PaymentController pc=new PaymentController();
+        Payment p=pc.searchPayment(this.u.getUserID());
+		
+        if(p==null) 
+        {
+            JOptionPane.showMessageDialog(this,"Your Fees are not Updated.Please Wait !!");
+            this.setVisible(true);
+            
+        }
+		else {
+			PaymentView pv=new PaymentView(this.u);
+			this.setVisible(false);
+			pv.setVisible(true);
 		}
-		catch(Exception e){
-			e.printStackTrace();
 		}
-	}
+		
 	
+}
 }

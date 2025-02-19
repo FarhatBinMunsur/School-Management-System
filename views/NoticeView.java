@@ -21,7 +21,7 @@ public class NoticeView extends JFrame implements ActionListener{
         this.setSize(800,700);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.c1=new Color(250, 200, 197);
+		this.c1=new Color(31,79,72);
 		this.c2=new Color(250, 236, 195);
 		
         this.panel=new JPanel();
@@ -29,7 +29,9 @@ public class NoticeView extends JFrame implements ActionListener{
         this.panel.setLayout(null);
 		
 		this.newLabel=new JLabel("New Notice");
-		this.newLabel.setBounds(320,50,100,30);
+		this.newLabel.setBounds(320,50,200,30);
+		this.newLabel.setForeground(Color.white);
+		this.newLabel.setFont(new Font("Baumans",Font.PLAIN,20));
 		this.panel.add(newLabel);
 		
 		
@@ -40,7 +42,9 @@ public class NoticeView extends JFrame implements ActionListener{
 		this.panel.add(newTF);
 		
 		this.prevLabel=new JLabel("Previous Notice");
-		this.prevLabel.setBounds(300,200,100,30);
+		this.prevLabel.setBounds(300,200,200,30);
+		this.prevLabel.setForeground(Color.white);
+		this.prevLabel.setFont(new Font("Baumans",Font.PLAIN,20));
 		this.panel.add(prevLabel);
 		
 		this.prevTA=new JTextArea();
