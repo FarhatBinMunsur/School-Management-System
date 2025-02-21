@@ -41,32 +41,26 @@ Programming Language: Java
 Data Storage: .txt files for persistent storage
 
 🚀 Getting Started
-Clone the Repository:
 
-```bash
-Copy
-Edit
+Clone the Repository:
 git clone https://github.com/FarhatBinMunsur/School-Management-System.git
 cd School-Management-System
+
 Compile the Application:
-bash
-Copy
-Edit
 javac Start.java
+
 Run the Application:
-
-bash
-Copy
-Edit
 java Start
-Usage:
 
-Follow the on-screen prompts to navigate through the system functionalities.
-📄 License
-This project is licensed under the MIT License.
+**To start a new compilation,Delete the previous .class files [MUST].
+
+Usage:
+Follow the prompts to navigate through the system functionalities.
 
 🤝 Contributing
 Contributions are welcome! Please fork this repository and submit a pull request for any enhancements or bug fixes.
 
 📧 Contact
 For any inquiries or suggestions, please contact [ https://www.facebook.com/F.B.M.Mahir ].
+
+THANKS😊💕 !!
