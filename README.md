@@ -43,7 +43,7 @@ Data Storage: .txt files for persistent storage
 🚀 Getting Started
 Clone the Repository:
 
-bash
+```bash
 Copy
 Edit
 git clone https://github.com/FarhatBinMunsur/School-Management-System.git
